@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>webpack+vue</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<script>
+		/* 动态改变根节点html的fontSize */
+		(function() {
+			rootFontSize();
+			//改变窗口大小
+			window.onresize = function() {
+				rootFontSize();
+			}
+			function rootFontSize() {
+				var deviceWidth = document.documentElement.clientWidth;
+				if(deviceWidth > 750) deviceWidth = 750;
+				document.documentElement.style.fontSize = deviceWidth / 7.5 + 'px';
+			}
+		})();
+		</script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+</html>
