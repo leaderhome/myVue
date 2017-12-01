@@ -3,6 +3,9 @@
     <headerTop>
       <span slot="text">首页</span>
     </headerTop>
+    <div style="padding: .3rem 0; text-align: center;">
+      <img alt="loading" src="../images/loading/loading2.gif">
+    </div>
     <div class="content">Content {{content}}</div>
     <div class="toAbout" @click="toAbout">进入About页面</div>
     <button class="btnModal" @click="viewDialog">模态框</button>
@@ -26,12 +29,12 @@ export default {
       this.$router.push('About');
     },
     viewDialog () {
-      var vm = this;
+      var self = this;
       myObj.dialog({
         title: '提示标题',
         content: `<div>提示信息html代码~~~
-          <br>${vm.test}
-        </div>`, //ES6写法，html模板
+          <br>${self.test}
+        </div>`, //ES6模板字符串
         callback: function() {}
       });
     }

@@ -3,11 +3,10 @@ import router from '@/router/router'
 import App from '@/App.vue'
 
 //css
-require('@/assets/commoncss/common.css');
+require('@/commoncss/common.css');
 
 //js
-require('@/assets/commonjs/zepto.min.js');
-window.myObj = (require('@/assets/commonjs/common.js')).myObj;
+window.myObj = (require('@/commonjs/common.js')).myObj;
 
 new Vue({
   el: '#app',
