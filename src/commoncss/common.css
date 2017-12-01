@@ -1,0 +1,126 @@
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+}
+body {
+  font-size: 16px;
+  color: #333;
+}
+@media screen and (max-width: 414px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 414px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* 自定义模态框 */
+.my-dialog {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, .4);
+  opacity: 0;
+  transition: all .4s;
+}
+.my-dialog.my-active {
+  opacity: 1;
+}
+.my-dialog-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1000;
+  width: 5.6rem;
+  background-color: #fff;
+  border-radius: .1rem;
+  transform: translate3d(-50%, -50%, 0);
+}
+.my-dialog-title {
+  position: relative;
+  height: 50px;
+  line-height: 40px;
+  padding-top: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1em;
+  color: #333;
+}
+.my-dialog-close,
+.my-alert-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+}
+.my-dialog-close:before,
+.my-dialog-close:after,
+.my-alert-close:before,
+.my-alert-close:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 20px;
+  height: 1px;
+  background-color: #aaa;
+  overflow: hidden;
+  transform: rotate(45deg);
+}
+.my-dialog-close:after,
+.my-alert-close:after {
+  transform: rotate(-45deg);
+}
+.my-alert .my-dialog-modal,
+.my-confirm .my-dialog-modal {
+  width: 6rem;
+  border-radius: .2rem;
+}
+.my-btn-alert {
+  display: block; height: 1rem; padding: 0; border: 0 none; margin: 0;
+  line-height: 1rem; text-align: center; font-weight: 400; font-size: 1em; color: #fff;
+  border-bottom-left-radius: .2rem; border-bottom-right-radius: .2rem;
+  background: #ed2a2f;
+  background: -ms-linear-gradient(left top, #ff686c, #ed2a2f); /* IE 10 */
+  background: -o-linear-gradient(left top, #ff686c, #ed2a2f); /* Opera 11.10+ */
+  background: -moz-linear-gradient(left top,#ff686c,#ed2a2f); /* 火狐 */
+  background: -webkit-linear-gradient(left top, #ff686c, #ed2a2f); /* Safari5.1 Chrome 10+ */
+}
+.my-btn-options {
+  border-top: 1px solid #ddd;
+  overflow: hidden;
+}
+.my-btn-cancel {
+  float: left;
+  width: 50%;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: .9375em;
+  color: #999;
+  border-bottom-left-radius: .2rem;
+}
+.my-btn-confirm {
+  float: left;
+  width: 50%;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: .9375em;
+  color: #fff;
+  border-bottom-right-radius: .2rem;
+  background: #ed2a2f;
+  background: -ms-linear-gradient(left top, #ff686c, #ed2a2f); /* IE 10 */
+  background: -o-linear-gradient(left top, #ff686c, #ed2a2f); /* Opera 11.10+ */
+  background: -moz-linear-gradient(left top, #ff686c, #ed2a2f); /* 火狐 */
+  background: -webkit-linear-gradient(left top, #ff686c, #ed2a2f); /* Safari5.1 Chrome 10+ */
+}
