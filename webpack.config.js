@@ -15,7 +15,7 @@ module.exports = {
     entry: {
       app: './src/main.js',
       vendor: ['vue','vuex','vue-router','axios','@/commonjs/zepto.min.js']
-    },//值可以是字符串、数组或对象
+    }, //值可以是字符串、数组或对象
     output: {
         path: path.join(__dirname, './dist'), //Webpack结果存储
         publicPath : '/',
