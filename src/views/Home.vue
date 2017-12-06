@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     toAbout () {
-      this.$router.push('About');
+      this.$router.push('about');
     },
     viewDialog () {
       var self = this;

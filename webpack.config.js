@@ -7,6 +7,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'); //css独立打�
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin; //抽出公共JS
 var CopyWebpackPlugin = require('copy-webpack-plugin'); //复制文件
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 
 var statics = 'static/';
 var extractCSS = new ExtractTextPlugin(statics + 'css/[name].css?[contenthash]');
@@ -43,6 +44,7 @@ module.exports = {
             {test: /\.json$/, loader: 'json-loader'}
         ]
     },
+    devtool : '#cheap-module-eval-source-map',
     devServer: {
         hot: true,
         inline: true, //实时刷新
@@ -51,7 +53,6 @@ module.exports = {
         contentBase: './public',
         historyApiFallback: true,
     },
-    devtool: '#eval-source-map',
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html',
@@ -63,6 +64,11 @@ module.exports = {
       }),
       new webpack.HotModuleReplacementPlugin(), //代码热替换
       extractCSS,
+      new OptimizeCSSPlugin({ //压缩提取出的css，并解决ExtractTextPlugin分离出的js重复问题(多个文件引入同一css文件)
+        cssProcessorOptions: {
+          safe: true
+        }
+      }),
       new CommonsChunkPlugin({
         name: ['vendor', 'vendor2'],
         minChunks: Infinity

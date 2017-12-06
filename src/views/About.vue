@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     toHome () {
-      this.$router.push({name: 'Home'});
+      this.$router.push({name: 'home'});
     }
   }
 }
